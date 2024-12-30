@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
 import { useSearchParams } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { toast } from 'react-hot-toast';
 import { FiCopy, FiCheckCircle } from 'react-icons/fi';
 import axios from 'axios';
 
-export default function PaymentInstructions() {
+function PaymentInstructionsComponent() {
   const searchParams = useSearchParams();
   const [paymentData, setPaymentData] = useState(null);
   const [paymentStatus, setPaymentStatus] = useState('Pending');
@@ -180,5 +180,13 @@ export default function PaymentInstructions() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function PaymentInstructions() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PaymentInstructionsComponent />
+    </Suspense>
   );
 }
