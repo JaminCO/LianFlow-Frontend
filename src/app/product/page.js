@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import productimg from "../../../public/public/images/product-img.jpg"
 
 export default function Product() {
   return (
@@ -54,7 +55,7 @@ export default function Product() {
               </div>
               <div className="relative">
                 <Image
-                  src="/product-img.jpg"
+                  src={productimg}
                   alt="Product features"
                   width={450}
                   height={150}

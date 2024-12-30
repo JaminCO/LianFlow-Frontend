@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { useAuth } from '@/hooks/useAuth'
 import Cookies from 'js-cookie'
 import { useRouter } from 'next/navigation'
+import logoC from "../../public/logo.png"
 
 const Navbar = () => {
     const router = useRouter()
@@ -41,7 +42,7 @@ const Navbar = () => {
                     {/* Desktop Navigation */}
                     <div className="flex flex-shrink-0 items-center">
                             <Image
-                                src="/logo.png"
+                                src={logoC}
                                 alt="Company Logo"
                                 width={80}
                                 height={80}

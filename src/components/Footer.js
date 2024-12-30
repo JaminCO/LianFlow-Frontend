@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import logoC from "../../public/logo.png"
 
 const navigation = {
   solutions: [
@@ -91,7 +92,7 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <Image
-              src="/logo.png"  // Add your logo to public folder
+              src={logoC}  // Add your logo to public folder
               alt="Company name"
               width={80}
               height={80}

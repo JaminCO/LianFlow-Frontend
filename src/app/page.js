@@ -5,6 +5,11 @@ import { useState } from 'react'
 import { CreditCardIcon, ChartBarIcon, UserGroupIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import heroImage from "../../public/hero-image.avif"
+import testImage1 from "../../public/testimonial-1.jpg"
+import testImage2 from "../../public/testimonial-2.jpg"
+import testImage3 from "../../public/testimonial-3.jpg"
+import testImage4 from "../../public/testimonial-4.jpg"
+
 
 const features = [
   {
@@ -29,19 +34,19 @@ const testimonials = [
     content: "This product has transformed how we handle our business operations.",
     author: "Sarah Johnson",
     role: "CEO at TechCorp",
-    image: "/testimonial-1.jpg",
+    image: testImage1,
   },
   {
     content: "The best solution we've found for our business needs.",
     author: "Michael Chen",
     role: "CTO at StartupX",
-    image: "/testimonial-2.jpg",
+    image: testImage2,
   },
   {
     content: "Incredible support and fantastic features.",
     author: "Emily Brown",
     role: "Founder at TechStart",
-    image: "/testimonial-3.jpg",
+    image: testImage3,
   },
 ]
 
