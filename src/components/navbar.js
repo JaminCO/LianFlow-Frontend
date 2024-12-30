@@ -107,7 +107,7 @@ const Navbar = () => {
                                             Wallet
                                         </button>
                                         <button
-                                            onClick={() => router.push('/docs')}
+                                            onClick={() => router.push('https://github.com/JaminCO/LianFlow-API/blob/main/Documentation.md')}
                                             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                         >
                                             Docs
@@ -186,7 +186,7 @@ const Navbar = () => {
                                     <button onClick={() => router.push('/wallet')} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                                         Wallet
                                     </button>
-                                    <button onClick={() => router.push('/history')} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                    <button onClick={() => router.push('https://github.com/JaminCO/LianFlow-API/blob/main/Documentation.md')} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                                         Docs
                                     </button>
                                 </div>
