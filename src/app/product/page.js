@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import productimg from "../../../public/public/images/product-img.jpg"
+import productimg from "../../../public/images/product-img.jpg"
 
 export default function Product() {
   return (
