@@ -110,7 +110,7 @@ export default function Product() {
                   <p className="text-gray-600 mb-4">
                     Step-by-step tutorials and examples to help you integrate LianFlow into your application.
                   </p>
-                  <a href="/docs/getting-started" className="text-indigo-600 hover:text-indigo-500 font-medium">
+                  <a href="https://peaceful-rainforest-7cd.notion.site/API-Reference-for-Developers-1b6d8e83b03c46d7a57e643452536dd7#7ec7d0924b3a4728b44138b42472fe64" className="text-indigo-600 hover:text-indigo-500 font-medium">
                     View guide →
                   </a>
                 </div>
@@ -119,7 +119,7 @@ export default function Product() {
                   <p className="text-gray-600 mb-4">
                     Complete API documentation with endpoints, parameters, and response examples.
                   </p>
-                  <a href="/docs/api" className="text-indigo-600 hover:text-indigo-500 font-medium">
+                  <a href="https://github.com/JaminCO/LianFlow-API/blob/main/Documentation.md" className="text-indigo-600 hover:text-indigo-500 font-medium">
                     Explore API docs →
                   </a>
                 </div>

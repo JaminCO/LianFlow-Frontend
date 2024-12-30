@@ -67,7 +67,7 @@ export default function Home() {
                   >
                     Get started
                   </Link>
-                  <Link href="/docs" className="text-sm font-semibold leading-6 text-gray-900">
+                  <Link href="https://github.com/JaminCO/LianFlow-API/blob/main/Documentation.md" className="text-sm font-semibold leading-6 text-gray-900">
                     Docs <span aria-hidden="true">→</span>
                   </Link>
                 </div>
