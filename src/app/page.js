@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { CreditCardIcon, ChartBarIcon, UserGroupIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
-
+import heroImage from "../../public/hero-image.avif"
 
 const features = [
   {
@@ -74,7 +74,7 @@ export default function Home() {
               </div>
               <div className="relative h-[400px]">
                 <Image
-                  src="/hero-image.avif" // Add your image to public folder
+                  src={heroImage} // Add your image to public folder
                   alt="Hero image"
                   fill
                   className="object-cover rounded-lg shadow-xl"
