@@ -7,7 +7,7 @@ export default function middleware(req) {
     const cookieStore = req.cookies;
     const token = cookieStore.get('token');
     const path = req.nextUrl.pathname;
-    const from = req.nextUrl.pathname;
+    // const from = req.nextUrl.pathname;
 
     const publicPaths = ['/login', '/signup', '/', '/product', '/contact', '/payment/instructions'];
     const authPaths = ['/login', '/signup'];
@@ -26,7 +26,8 @@ export default function middleware(req) {
 
     if (!token && !path.includes('/checkout/')){
         return NextResponse.redirect(
-            new URL(`/login?from=${encodeURIComponent(from)}`, req.url)
+            // new URL(`/login?from=${encodeURIComponent(from)}`, req.url)
+            new URL(`/login`, req.url)
         );
     }
 
