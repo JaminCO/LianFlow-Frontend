@@ -28,9 +28,7 @@ export function useTokenValidation() {
         }
 
         if (!token) {
-          Cookies.remove('token');
-          Cookies.remove('business_name');
-          router.push(`/login?from=${encodeURIComponent(currentPath)}`);
+          router.push('/login');
           return;
         }
 
@@ -47,7 +45,7 @@ export function useTokenValidation() {
         } catch (error) {
           Cookies.remove('token');
           Cookies.remove('business_name');
-          router.push(`/login?from=${encodeURIComponent(currentPath)}`);
+          router.push('/login');
         }
       }
     };
