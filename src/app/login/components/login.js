@@ -77,7 +77,7 @@ export default function Login() {
       .catch((error) => {
         console.log(error);
         const errorMessage = error.response && error.response.status === 401
-          ? "Invalid email or password"
+          ? error.response.data.detail
           : "An error occurred. Please try again.";
         Toast.fire({
           icon: "error",
