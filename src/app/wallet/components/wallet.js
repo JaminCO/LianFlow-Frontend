@@ -9,7 +9,7 @@ import { ClipLoader } from 'react-spinners';
 const WalletPage = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [balances, setBalances] = useState({
-    GAS: 0,
+    ETH: 0,
     USDT: 0
   });
   const [address, setAddress] = useState('....');
@@ -117,8 +117,8 @@ const WalletPage = () => {
     }
   };
 
-  const getGasToUsdt = () => {  
-    axios.get("https://min-api.cryptocompare.com/data/price?fsym=GAS&tsyms=USDT", { 
+  const getEthToUsdt = () => {  
+    axios.get("https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USDT", { 
       timeout: 10000 
     })
     .then(response => {
@@ -139,7 +139,7 @@ const WalletPage = () => {
     fetchNumPayments();
     fetchTransactions();
     fetchPayments();
-    getGasToUsdt();
+    getEthToUsdt();
     setLoading(false);
   }, []);
 
@@ -186,7 +186,7 @@ const WalletPage = () => {
           </div>
           
           <div className="flex items-center space-x-4 mb-4">
-            {['USDT', 'GAS'].map((currency) => (
+            {['USDT', 'ETH'].map((currency) => (
               <button
                 key={currency}
                 onClick={() => setSelectedCurrency(currency)}
@@ -203,7 +203,7 @@ const WalletPage = () => {
 
           <div className="text-3xl font-bold text-blue-600">
             {selectedCurrency === 'USDT' ? '$' : ''}{formatBalance(balances[selectedCurrency])}
-            {selectedCurrency === 'GAS' ? ' GAS' : ''}
+            {selectedCurrency === 'ETH' ? ' ETH' : ''}
           </div>
           
           <div className="flex items-center mt-2 text-sm text-gray-500">
@@ -217,7 +217,7 @@ const WalletPage = () => {
           <div className="space-y-4">
             <div className="flex items-center justify-between border-b pb-2">
               <span className="font-medium text-gray-700">Network</span>
-              <span className="text-green-500 font-semibold">NEO X</span>
+              <span className="text-green-500 font-semibold">Base Mainnet</span>
             </div>
             <div className="flex items-center justify-between border-b pb-2">
               <span className="font-medium text-gray-700">Address</span>
@@ -241,7 +241,7 @@ const WalletPage = () => {
             </div>
             <div className='flex items-center justify-between border-b pb-2'>
               <span className="font-medium text-gray-700">Token</span>
-              <span className="text-green-500 font-semibold">GAS</span>
+              <span className="text-green-500 font-semibold">ETH</span>
             </div>
           </div>
         </div>
@@ -322,7 +322,7 @@ const WalletPage = () => {
                     </div>
                     <div className="text-right">
                       <div className={`text-${payments.receiver_address === address ? 'green' : 'red'}-500`}>
-                        {payments.receiver_address === address ? `+${payments.amount} GAS` : `-${payments.amount} GAS`}
+                        {payments.receiver_address === address ? `+${payments.amount} ETH` : `-${payments.amount} ETH`}
                       </div>
                       <div className="text-sm text-gray-500">{formatDate(payments.created_at, "relative")}</div>
                       <strong className="text-sm text-gray-500">{payments.status}</strong>
@@ -356,7 +356,7 @@ const WalletPage = () => {
                     </div>
                     <div className="text-right">
                       <div className={`text-${transaction.to_address === address ? 'green' : 'red'}-500`}>
-                        {transaction.to_address === address ? `+${transaction.amount} GAS` : `-${transaction.amount} GAS`}
+                        {transaction.to_address === address ? `+${transaction.amount} ETH` : `-${transaction.amount} ETH`}
                       </div>
                       <div className="text-sm text-gray-500">{formatDate(transaction.created_at, "short")}</div>
                       <strong className="text-sm text-gray-500">{transaction.status}</strong>
@@ -421,7 +421,7 @@ const WalletPage = () => {
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-900">{transaction.amount} GAS</div>
+                        <div className="text-sm text-gray-900">{transaction.amount} ETH</div>
                         <div className="text-sm text-gray-500">{formatCurrency((transaction.amount * usdtVal).toFixed(2))}</div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
@@ -495,7 +495,7 @@ const WalletPage = () => {
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{payment.amount} GAS</div>
+                      <div className="text-sm text-gray-900">{payment.amount} ETH</div>
                       <div className="text-sm text-gray-500">{formatCurrency((payment.amount * usdtVal).toFixed(2))}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">

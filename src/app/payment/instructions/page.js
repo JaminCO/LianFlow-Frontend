@@ -107,7 +107,7 @@ function PaymentInstructionsComponent() {
               <FiCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
               <h1 className="text-2xl font-bold mb-2">Payment Confirmed!</h1>
               <p className="text-gray-600">
-                Your payment of {paymentData.gas_amount} GAS (${paymentData.total_amount} USD) has been received
+                Your payment of {paymentData.eth_amount} ETH (${paymentData.total_amount} USD) has been received
               </p>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg mb-6">
@@ -144,7 +144,7 @@ function PaymentInstructionsComponent() {
             <div className="bg-gray-50 p-6 rounded-lg">
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-600 mb-2">Amount to Send</label>
-                <div className="text-2xl font-bold">{paymentData.gas_amount} GAS</div>
+                <div className="text-2xl font-bold">{paymentData.eth_amount} ETH on BASE </div>
                 <div className="text-sm text-gray-500">(${paymentData.total_amount} USD)</div>
               </div>
 
@@ -170,7 +170,7 @@ function PaymentInstructionsComponent() {
             <div className="border-t pt-6">
               <h3 className="font-semibold mb-4">Important Notes:</h3>
               <ul className="list-disc list-inside space-y-2 text-gray-600">
-                <li>Send only GAS to this address</li>
+                <li>Send only ETH (On BASE MAINNET) to this address</li>
                 <li>Payment must be completed within {Math.ceil(timeLeft / 60)} minutes</li>
                 <li>Send the exact amount shown above</li>
                 <li>Transaction confirmation may take a few minutes</li>

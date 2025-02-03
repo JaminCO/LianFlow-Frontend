@@ -73,8 +73,8 @@ export default function Checkout() {
               <p className="text-2xl font-bold">${paymentData?.total_amount}</p>
             </div>
             <div>
-              <p className="text-gray-600">Amount in GAS</p>
-              <p className="font-semibold">{paymentData?.gas_amount} GAS</p>
+              <p className="text-gray-600">Amount in ETH</p>
+              <p className="font-semibold">{paymentData?.eth_amount} ETH</p>
             </div>
             <div>
               <p className="text-gray-600">Payment ID</p>

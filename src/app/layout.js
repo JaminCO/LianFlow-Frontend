@@ -29,7 +29,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "LianFlow",
   description: "A Web3 B2B SaaS Platform for Seamless Crypto Payments on the NeoX Chain",
-};
+ };
 
 
 export default function RootLayout({ children }) {

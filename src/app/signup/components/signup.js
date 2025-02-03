@@ -5,6 +5,7 @@ import Link from 'next/link'
 import axios from 'axios'
 import Swal from "sweetalert2";
 import { useRouter } from 'next/navigation'
+import { useAuth } from '@/hooks/useAuth'
 
 const LoadingSpinner = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -18,12 +19,13 @@ export default function SignUp() {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const { updateAuthState } = useAuth();
 
   const Toast = Swal.mixin({
     toast: true,
     position: "top-end",
     showConfirmButton: false,
-    timer: 6000,
+    timer: 4000,
     timerProgressBar: true,
     didOpen: (toast) => {
       toast.onmouseenter = Swal.stopTimer;
@@ -82,10 +84,9 @@ export default function SignUp() {
 
     axios.post(`${API_URL}/users/signup`, signupData).
       then((response) => {
-        console.log(response);
+        const { access_token } = response.data;
 
-        const { user_id } = response.data;
-        console.log(user_id)
+        updateAuthState(access_token);
 
         Toast.fire({
           icon: "success",

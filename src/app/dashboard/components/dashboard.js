@@ -95,8 +95,8 @@ const Dashboard = () => {
   const [recentTransactions, setRecentTransactions] = useState([]);
   const [usdtVal, setUsdtVal] = useState(0);
 
-  const getGasToUsdt = () => {  
-    axios.get("https://min-api.cryptocompare.com/data/price?fsym=GAS&tsyms=USDT", { 
+  const getEthToUsdt = () => {  
+    axios.get("https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USDT", { 
       timeout: 10000 
     })
     .then(response => {
@@ -120,7 +120,7 @@ const Dashboard = () => {
           }
         });
 
-        getGasToUsdt()
+        getEthToUsdt()
         setDashboardData(response.data);
         setPaymentData([
           { month: 'Jan', transactions: 65, volume: 89000 },
@@ -172,7 +172,7 @@ const Dashboard = () => {
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Total Balance</p>
                 <h3 className="text-2xl font-bold">
-                  {dashboardData?.balances.GAS} GAS
+                  {dashboardData?.balances.ETH} ETH
                 </h3>
               </div>
             </div>
@@ -188,7 +188,7 @@ const Dashboard = () => {
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Monthly Transaction Volume</p>
                 <h3 className="text-2xl font-bold">
-                {dashboardData?.transaction_volume.toFixed(3)} GAS 
+                {dashboardData?.transaction_volume.toFixed(3)} ETH 
                 {/* {formatCurrency((dashboardData?.transaction_volume * usdtVal).toFixed(2))} */}
                 </h3>
                 
@@ -261,7 +261,7 @@ const Dashboard = () => {
                       <CreditCard className="h-6 w-6 text-gray-400 mr-3" />
                       <div>
                         <p className="font-medium text-black">{transaction.data || 'John Doe'}</p>
-                        <p className="text-sm text-gray-500">{transaction.amount} GAS</p>
+                        <p className="text-sm text-gray-500">{transaction.amount} ETH</p>
                       </div>
                     </div>
                     <span className={`px-3 py-1 rounded-full text-sm ${
